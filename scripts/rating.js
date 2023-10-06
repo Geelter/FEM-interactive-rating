@@ -1,5 +1,5 @@
 const optionList = document.querySelector('.rating__options');
-const options = optionList.querySelectorAll('[role="listitem"]');
+const options = optionList.querySelectorAll('.rating__option');
 
 options.forEach(
     option => option.addEventListener('click', chooseRatingOption)
