@@ -23,6 +23,10 @@
     
     /* font-families */
     --ff-sans-serif: 'Overpass', sans-serif;
+
+    /* font-weights */
+    --fw-regular: 400;
+    --fw-bold: 700;
 }
 
 @media (width >= 35em) {
@@ -124,4 +128,169 @@ textarea, select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ------------------------- */
+/*      Utility classes      */
+/* ------------------------- */
+
+.flow > *:where(:not(:first-child)) {
+    margin-top: var(--flow-space, 1rem);
+}
+
+/* typography */
+
+.uppercase { text-transform: uppercase; }
+
+.letter-spacing-1 { letter-spacing: 4.75px; } 
+.letter-spacing-2 { letter-spacing: 2.7px; } 
+.letter-spacing-3 { letter-spacing: 2.35px; } 
+
+.fs-900 { font-size: var(--fs-900); }
+.fs-800 { font-size: var(--fs-800); }
+.fs-700 { font-size: var(--fs-700); }
+.fs-600 { font-size: var(--fs-600); }
+.fs-500 { font-size: var(--fs-500); }
+.fs-400 { font-size: var(--fs-400); }
+.fs-300 { font-size: var(--fs-300); }
+.fs-200 { font-size: var(--fs-200); }
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+    line-height: 1.1;
+}
+
+.fw-regular { font-weight: var(--fw-regular); }
+.fw-bold { font-weight: var(--fw-bold); }
+
+/* --------------- */
+
+html {
+    font-family: var(--ff-sans-serif);
+}
+
+.wrapper {
+    --max-card-width: min(100% - 2rem, 25rem);
+
+    display: grid;
+    place-items: center;
+
+    color: hsl( var(--clr-light-grey) );
+    background-color: hsl( var(--clr-v-dark-blue) );
+}
+
+.rating {
+    --_button-timing: cubic-bezier(.85,.16,.27,.85);
+    --_button-duration: 300ms;
+    --_button-animation-properties: color, background-color;
+
+    --flow-space: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 2rem;
+    max-width: var(--max-card-width);
+    border-radius: 20px;
+    background-color: hsl( var(--clr-dark-blue) );
+
+    &__image {
+        padding: 1rem;
+        border-radius: 100%;
+        background-color: hsl( var(--clr-medium-grey) / 0.05);
+    }
+
+    &__heading {
+        color: hsl( var(--clr-white) );
+    }
+
+    &__content {
+        --flow-space: 1rem;
+    }
+
+    &__options {
+        --flow-space: 2.5rem;
+        align-self: stretch;
+        margin-bottom: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+
+        & > * {
+            display: grid;
+            place-items: center;
+            width: 3rem;
+            aspect-ratio: 1;
+            border: 0;
+            border-radius: 100%;
+            color: currentColor;
+            background-color: hsl( var(--clr-medium-grey) / 0.15);
+
+            cursor: pointer;
+            transition-property: var(--_button-animation-properties);
+            transition-duration: var(--_button-duration);
+            transition-timing-function: var(--_button-timing);
+        }
+
+        & > *:focus,
+        & > *:is(:hover) {
+            color: hsl( var(--clr-white) );
+            background-color: hsl( var(--clr-light-grey));
+        }
+
+        & > *[data-chosen="true"] {
+            color: hsl( var(--clr-white) );
+            background-color: hsl( var(--clr-orange));
+        }
+    }
+
+    &__button {
+        --flow-space: 2rem;
+        align-self: stretch;
+        padding-block: 1.15rem 1rem;
+        border: 0;
+        border-radius: 50px;
+        color: hsl( var(--clr-white) );
+        background-color: hsl( var(--clr-orange));
+
+        cursor: pointer;
+        transition-property: var(--_button-animation-properties);
+        transition-duration: var(--_button-duration);
+        transition-timing-function: var(--_button-timing);
+
+        &:hover {
+            color: hsl( var(--clr-orange) );
+            background-color: hsl( var(--clr-white));
+        }
+    }
+}
+
+.appreciation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    max-width: var(--max-card-width);
+    border-radius: 20px;
+    background-color: hsl( var(--clr-dark-blue) );
+
+    &__subheading {
+        --flow-space: 1.5rem;
+        padding-block: 0.6rem;
+        padding-inline: 0.8rem;
+        border-radius: 50px;
+
+        color: hsl( var(--clr-orange) );
+        background-color: hsl( var(--clr-medium-grey) / 0.1);
+    }
+
+    &__heading {
+        --flow-space: 2rem;
+        color: hsl( var(--clr-white) );
+    }
+
+    &__content {
+        text-align: center;
+    }
 }
