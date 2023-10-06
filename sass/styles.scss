@@ -77,7 +77,8 @@ figure, blockquote, dl, dd {
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role='list'],
-ol[role='list'] {
+ol[role='list'],
+menu[role='list'] {
   list-style: none;
 }
 
@@ -216,33 +217,34 @@ html {
         padding: 0;
         display: flex;
         justify-content: space-between;
+    }
 
-        & > * {
-            display: grid;
-            place-items: center;
-            width: 3rem;
-            aspect-ratio: 1;
-            border: 0;
-            border-radius: 100%;
-            color: currentColor;
-            background-color: hsl( var(--clr-medium-grey) / 0.15);
+    &__option {
+        display: grid;
+        place-items: center;
+        width: 3rem;
+        aspect-ratio: 1;
+        border: 0;
+        border-radius: 100%;
+        color: currentColor;
+        background-color: hsl( var(--clr-medium-grey) / 0.15);
 
-            cursor: pointer;
-            transition-property: var(--_button-animation-properties);
-            transition-duration: var(--_button-duration);
-            transition-timing-function: var(--_button-timing);
-        }
+        cursor: pointer;
+        transition-property: var(--_button-animation-properties);
+        transition-duration: var(--_button-duration);
+        transition-timing-function: var(--_button-timing);    
 
-        & > *:focus,
-        & > *:is(:hover) {
+        &:focus,
+        &:is(:hover) {
             color: hsl( var(--clr-white) );
             background-color: hsl( var(--clr-light-grey));
         }
 
-        & > *[data-chosen="true"] {
+        &[data-chosen="true"] {
             color: hsl( var(--clr-white) );
             background-color: hsl( var(--clr-orange));
         }
+
     }
 
     &__button {

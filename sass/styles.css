@@ -70,7 +70,8 @@ figure, blockquote, dl, dd {
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role=list],
-ol[role=list] {
+ol[role=list],
+menu[role=list] {
   list-style: none;
 }
 
@@ -239,7 +240,7 @@ html {
   display: flex;
   justify-content: space-between;
 }
-.rating__options > * {
+.rating__option {
   display: grid;
   place-items: center;
   width: 3rem;
@@ -253,11 +254,11 @@ html {
   transition-duration: var(--_button-duration);
   transition-timing-function: var(--_button-timing);
 }
-.rating__options > *:focus, .rating__options > *:is(:hover) {
+.rating__option:focus, .rating__option:is(:hover) {
   color: hsl(var(--clr-white));
   background-color: hsl(var(--clr-light-grey));
 }
-.rating__options > *[data-chosen=true] {
+.rating__option[data-chosen=true] {
   color: hsl(var(--clr-white));
   background-color: hsl(var(--clr-orange));
 }
