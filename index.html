@@ -45,25 +45,58 @@
             feedback is appreciated to help us improve our offering!
           </p>
 
-          <ul role="list" class="rating__options">
-            <button role="listitem" data-chosen="false" data-rating="1">
-              1
-            </button>
-            <button role="listitem" data-chosen="false" data-rating="2">
-              2
-            </button>
-            <button role="listitem" data-chosen="false" data-rating="3">
-              3
-            </button>
-            <button role="listitem" data-chosen="false" data-rating="4">
-              4
-            </button>
-            <button role="listitem" data-chosen="false" data-rating="5">
-              5
-            </button>
-          </ul>
+          <menu role="list" aria-label="Rating options" class="rating__options">
+            <li role="listItem">
+              <button
+                class="rating__option"
+                data-chosen="false"
+                data-rating="1"
+              >
+                1
+              </button>
+            </li>
+            <li role="listItem">
+              <button
+                class="rating__option"
+                data-chosen="false"
+                data-rating="2"
+              >
+                2
+              </button>
+            </li>
+            <li role="listItem">
+              <button
+                class="rating__option"
+                data-chosen="false"
+                data-rating="3"
+              >
+                3
+              </button>
+            </li>
+            <li role="listItem">
+              <button
+                class="rating__option"
+                data-chosen="false"
+                data-rating="4"
+              >
+                4
+              </button>
+            </li>
+            <li role="listItem">
+              <button
+                class="rating__option"
+                data-chosen="false"
+                data-rating="5"
+              >
+                5
+              </button>
+            </li>
+          </menu>
 
-          <button class="rating__button uppercase letter-spacing-3">
+          <button
+            class="rating__button uppercase letter-spacing-3"
+            aria-label="Submit rating"
+          >
             Submit
           </button>
         </article>
