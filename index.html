@@ -22,41 +22,52 @@
 
     <link rel="stylesheet" href="./sass/styles.css" />
 
-    <title>Frontend Mentor | Interactive rating component</title>
+    <script src="./scripts/rating.js" defer></script>
+    <script src="./scripts/submit.js" defer></script>
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
+    <title>Frontend Mentor | Interactive rating component</title>
   </head>
   <body>
-    <!-- Rating state start -->
+    <main style="min-height: inherit">
+      <div class="wrapper" style="min-height: inherit">
+        <article class="rating flow">
+          <img
+            aria-hidden="true"
+            class="rating__image"
+            src="./images/icon-star.svg"
+            alt=""
+          />
 
-    How did we do? Please let us know how we did with your support request. All
-    feedback is appreciated to help us improve our offering! 1 2 3 4 5 Submit
+          <h2 class="rating__heading">How did we do?</h2>
 
-    <!-- Rating state end -->
+          <p class="rating__content">
+            Please let us know how we did with your support request. All
+            feedback is appreciated to help us improve our offering!
+          </p>
 
-    <!-- Thank you state start -->
+          <ul role="list" class="rating__options">
+            <button role="listitem" data-chosen="false" data-rating="1">
+              1
+            </button>
+            <button role="listitem" data-chosen="false" data-rating="2">
+              2
+            </button>
+            <button role="listitem" data-chosen="false" data-rating="3">
+              3
+            </button>
+            <button role="listitem" data-chosen="false" data-rating="4">
+              4
+            </button>
+            <button role="listitem" data-chosen="false" data-rating="5">
+              5
+            </button>
+          </ul>
 
-    You selected
-    <!-- Add rating here -->
-    out of 5 Thank you! We appreciate you taking the time to give a rating. If
-    you ever need more support, don’t hesitate to get in touch!
-
-    <!-- Thank you state end -->
-
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div>
+          <button class="rating__button uppercase letter-spacing-3">
+            Submit
+          </button>
+        </article>
+      </div>
+    </main>
   </body>
 </html>
